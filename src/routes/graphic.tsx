@@ -229,14 +229,14 @@ function Derivatives({ scale = 1 }: { scale?: number }) {
       <Label size={12 * scale}>Derivatives / Futures</Label>
       <div style={{ display: "flex", gap: 10 * scale, marginTop: 10 * scale }}>
         <div style={{ paddingTop: 7 * scale, lineHeight: 0 }}>
-          <Dot color={C.muted} />
+          <Dot color={C.brand} />
         </div>
         <div>
           <div
             style={{
               fontFamily: SANS,
               fontWeight: 700,
-              fontSize: 16 * scale,
+              fontSize: 19 * scale,
               letterSpacing: "-0.02em",
               color: C.text,
             }}
