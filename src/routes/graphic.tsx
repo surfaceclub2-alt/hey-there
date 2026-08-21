@@ -273,7 +273,7 @@ function SpotBlocks({ scale = 1, compact = false }: { scale?: number; compact?: 
             dot={C.ok}
             name="MEXC"
             pairs="RBNT/USDT, RBNT/USDC"
-            note="Highest volume of the four."
+            note="Highest volume of the five."
           />
           <Row scale={scale} dot={C.ok} name="BYDFi" pairs="RBNT/USDT" />
           <Row
@@ -286,6 +286,13 @@ function SpotBlocks({ scale = 1, compact = false }: { scale?: number; compact?: 
                 ? "Thin. No trades seen for hours."
                 : "Thin. No trades seen in hours before verification."
             }
+          />
+          <Row
+            scale={scale}
+            dot={C.warn}
+            name="BitMart"
+            pairs="RBNT/USDT"
+            note="Wind-down. All trading ends 26 Aug 2026."
           />
         </div>
       </Card>
