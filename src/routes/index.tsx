@@ -792,6 +792,11 @@ function Page() {
                   <WhitebitCallout />
                 </li>
               ) : null}
+              {v.name === "BitMart" ? (
+                <li className="col-span-full list-none">
+                  <BitmartCallout />
+                </li>
+              ) : null}
                 </Fragment>
               ))}
             </ul>
