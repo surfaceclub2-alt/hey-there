@@ -194,7 +194,7 @@ function Stamp({ scale = 1 }: { scale?: number }) {
   return (
     <div>
       <div style={{ fontFamily: MONO, fontSize: 14 * scale, color: C.secondary }}>
-        Last verified: 2026-08-11
+        Last verified: 2026-08-21
       </div>
       <div
         style={{
@@ -229,14 +229,14 @@ function Derivatives({ scale = 1 }: { scale?: number }) {
       <Label size={12 * scale}>Derivatives / Futures</Label>
       <div style={{ display: "flex", gap: 10 * scale, marginTop: 10 * scale }}>
         <div style={{ paddingTop: 7 * scale, lineHeight: 0 }}>
-          <Dot color={C.muted} />
+          <Dot color={C.brand} />
         </div>
         <div>
           <div
             style={{
               fontFamily: SANS,
               fontWeight: 700,
-              fontSize: 16 * scale,
+              fontSize: 19 * scale,
               letterSpacing: "-0.02em",
               color: C.text,
             }}
@@ -273,7 +273,7 @@ function SpotBlocks({ scale = 1, compact = false }: { scale?: number; compact?: 
             dot={C.ok}
             name="MEXC"
             pairs="RBNT/USDT, RBNT/USDC"
-            note="Highest volume of the four."
+            note="Highest volume of the five."
           />
           <Row scale={scale} dot={C.ok} name="BYDFi" pairs="RBNT/USDT" />
           <Row
@@ -286,6 +286,13 @@ function SpotBlocks({ scale = 1, compact = false }: { scale?: number; compact?: 
                 ? "Thin. No trades seen for hours."
                 : "Thin. No trades seen in hours before verification."
             }
+          />
+          <Row
+            scale={scale}
+            dot={C.warn}
+            name="BitMart"
+            pairs="RBNT/USDT"
+            note="Wind-down. All trading ends 26 Aug 2026."
           />
         </div>
       </Card>

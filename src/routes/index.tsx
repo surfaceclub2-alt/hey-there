@@ -47,14 +47,14 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Canonical, dated list of every live venue trading RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-08 UTC.",
+          "Canonical, dated list of every live venue trading RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-21 UTC.",
       },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Where to Buy & Trade RBNT" },
       {
         property: "og:description",
         content:
-          "Canonical venue list for RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-08 UTC.",
+          "Canonical venue list for RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-21 UTC.",
       },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Where to Buy & Trade RBNT" },
@@ -79,7 +79,7 @@ type Venue = {
   type: "CEX" | "DEX" | "NONE";
   pair: string;
   url: string | null;
-  status: "verified" | "thin" | "unconfirmed" | "none";
+  status: "verified" | "thin" | "unconfirmed" | "winddown" | "none";
   category: "native-spot" | "wrapped-spot" | "futures";
   chain?: string;
   flag?: string;
@@ -113,6 +113,14 @@ const VENUES: Venue[] = [
     status: "thin",
     category: "native-spot",
     logo: "/logos/whitebit.png",
+  },
+  {
+    name: "BitMart",
+    type: "CEX",
+    pair: "RBNT/USDT",
+    url: "https://www.bitmart.com/trade/RBNT_USDT",
+    status: "winddown",
+    category: "native-spot",
   },
   {
     name: "BYDFi",
@@ -238,6 +246,7 @@ const statusColor: Record<Venue["status"], string> = {
   verified: "bg-success",
   thin: "bg-warning",
   unconfirmed: "bg-warning",
+  winddown: "bg-warning",
   none: "bg-brand",
 };
 
@@ -245,6 +254,7 @@ const statusText: Record<Venue["status"], string> = {
   verified: "text-success",
   thin: "text-warning",
   unconfirmed: "text-warning",
+  winddown: "text-warning",
   none: "text-brand",
 };
 
@@ -252,7 +262,16 @@ const statusBorderColor: Record<Venue["status"], string> = {
   verified: "border-success",
   thin: "border-warning",
   unconfirmed: "border-warning",
+  winddown: "border-warning",
   none: "border-brand",
+};
+
+const statusLabel: Record<Venue["status"], string> = {
+  verified: "verified",
+  thin: "thin",
+  unconfirmed: "unconfirmed",
+  winddown: "wind-down",
+  none: "none",
 };
 
 function NativeStatusBadge({ status }: { status: Venue["status"] }) {
@@ -265,7 +284,7 @@ function NativeStatusBadge({ status }: { status: Venue["status"] }) {
         aria-hidden="true"
       />
       <span className={`font-mono text-[13px] ${statusText[status]}`}>
-        {status}
+        {statusLabel[status]}
       </span>
     </span>
   );
@@ -496,6 +515,17 @@ function PriceCell({
     fontSize: 14,
   } as const;
 
+  if (venue.name === "BitMart") {
+    return (
+      <span
+        className="justify-self-end overflow-visible whitespace-nowrap text-right"
+        style={{ ...baseStyle, color: "#93a4ae" }}
+      >
+        Winding down
+      </span>
+    );
+  }
+
   if (venue.name === "BYDFi") {
     return (
       <span
@@ -616,6 +646,43 @@ function WhitebitCallout() {
   );
 }
 
+function BitmartCallout() {
+  return (
+    <div
+      className="mt-2 flex items-start gap-3 text-[16px] leading-[1.5]"
+      style={{
+        backgroundColor: "#1e2a31",
+        border: "1px solid #FCD34D",
+        borderLeft: "3px solid #FCD34D",
+        borderRadius: "4px",
+        padding: "10px 14px",
+        color: "#e4ebf0",
+      }}
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#FCD34D"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="mt-1 shrink-0"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="16" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12.01" y2="8" />
+      </svg>
+      BitMart is winding down. New orders and deposits stopped 26 Jul 2026. All
+      trading ends 26 Aug 2026, 01:00 UTC. Do not treat this as an ongoing
+      venue.
+    </div>
+  );
+}
+
+
 function Card({
   accent,
   title,
@@ -698,7 +765,7 @@ function Page() {
             className="font-mono text-[13px]"
             style={{ color: "#ffb3ae" }}
           >
-            Last verified: 2026-08-11 UTC
+            Last verified: 2026-08-21 UTC
           </span>
           <a
             href="#verify"
@@ -723,6 +790,11 @@ function Page() {
               {v.name === "WhiteBIT" ? (
                 <li className="col-span-full list-none">
                   <WhitebitCallout />
+                </li>
+              ) : null}
+              {v.name === "BitMart" ? (
+                <li className="col-span-full list-none">
+                  <BitmartCallout />
                 </li>
               ) : null}
                 </Fragment>
@@ -959,7 +1031,7 @@ function Page() {
 
       <footer className="mt-10 border-t border-hairline pt-6 pb-10">
         <p className="font-mono text-[13px]" style={{ color: "#ffb3ae" }}>
-          Last verified: 2026-08-11 UTC
+          Last verified: 2026-08-21 UTC
         </p>
         <p className="mt-2 text-[15px] text-secondary-foreground">
           Sources: CoinGecko, CoinCodex, Coinlore, and each exchange's own live
@@ -1024,6 +1096,49 @@ function Page() {
               <path d="M18 9h-2v6h2M16 12h1.5" />
             </svg>
             <span>DEV.TO</span>
+          </a>
+          <a
+            href="/RBNT_venues_1080x1080_X.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="9" cy="9" r="1.5" />
+              <path d="M21 16l-5-5-6 6-3-3-4 4" />
+            </svg>
+            <span>GRAPHIC (X)</span>
+          </a>
+          <a
+            href="/RBNT_venues_1200x630_Discord.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <circle cx="8" cy="10" r="1.5" />
+              <path d="M22 17l-6-6-5 5-2-2-5 5" />
+            </svg>
+            <span>GRAPHIC (DISCORD)</span>
+          </a>
+          <a
+            href="/Spot_vs_Futures_Companion.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+              <path d="M15 2v5h5" />
+              <line x1="8" y1="13" x2="16" y2="13" />
+              <line x1="8" y1="17" x2="13" y2="17" />
+            </svg>
+            <span>COMPANION</span>
           </a>
         </div>
         <div className="flex justify-center" style={{ marginTop: "24px" }}>
