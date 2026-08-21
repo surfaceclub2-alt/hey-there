@@ -194,7 +194,7 @@ function Stamp({ scale = 1 }: { scale?: number }) {
   return (
     <div>
       <div style={{ fontFamily: MONO, fontSize: 14 * scale, color: C.secondary }}>
-        Last verified: 2026-08-11
+        Last verified: 2026-08-21
       </div>
       <div
         style={{
