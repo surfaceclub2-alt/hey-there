@@ -515,6 +515,17 @@ function PriceCell({
     fontSize: 14,
   } as const;
 
+  if (venue.name === "BitMart") {
+    return (
+      <span
+        className="justify-self-end overflow-visible whitespace-nowrap text-right"
+        style={{ ...baseStyle, color: "#93a4ae" }}
+      >
+        Winding down
+      </span>
+    );
+  }
+
   if (venue.name === "BYDFi") {
     return (
       <span
