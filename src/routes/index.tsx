@@ -79,7 +79,7 @@ type Venue = {
   type: "CEX" | "DEX" | "NONE";
   pair: string;
   url: string | null;
-  status: "verified" | "thin" | "unconfirmed" | "winddown" | "none";
+  status: "verified" | "thin" | "unconfirmed" | "none";
   category: "native-spot" | "wrapped-spot" | "futures";
   chain?: string;
   flag?: string;
