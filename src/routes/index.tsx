@@ -654,7 +654,13 @@ function Card({
             {caption ? (
               typeof caption === "string" ? (
                 <p
-                  className={`mt-1 text-[15px] ${captionTone === "warning" ? "text-warning" : "text-muted-foreground"}`}
+                  className={`mt-1 text-[15px] ${
+                    captionTone === "warning"
+                      ? "text-warning"
+                      : captionTone === "brand"
+                        ? "text-brand"
+                        : "text-muted-foreground"
+                  }`}
                 >
                   {caption}
                 </p>
@@ -778,7 +784,7 @@ function Page() {
         <Card
           title="Spot - RBNT / WRBNT"
           caption="Separate from native RBNT"
-          captionTone="warning"
+          captionTone="brand"
         >
           <ul className="flex flex-col">
             {CHAIN_GROUPS.map((g) => (
