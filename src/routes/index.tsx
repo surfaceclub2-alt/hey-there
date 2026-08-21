@@ -765,7 +765,7 @@ function Page() {
             className="font-mono text-[13px]"
             style={{ color: "#ffb3ae" }}
           >
-            Last verified: 2026-08-11 UTC
+            Last verified: 2026-08-21 UTC
           </span>
           <a
             href="#verify"
