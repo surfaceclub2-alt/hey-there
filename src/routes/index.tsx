@@ -646,6 +646,43 @@ function WhitebitCallout() {
   );
 }
 
+function BitmartCallout() {
+  return (
+    <div
+      className="mt-2 flex items-start gap-3 text-[16px] leading-[1.5]"
+      style={{
+        backgroundColor: "#1e2a31",
+        border: "1px solid #FCD34D",
+        borderLeft: "3px solid #FCD34D",
+        borderRadius: "4px",
+        padding: "10px 14px",
+        color: "#e4ebf0",
+      }}
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#FCD34D"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="mt-1 shrink-0"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="16" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12.01" y2="8" />
+      </svg>
+      BitMart is winding down. New orders and deposits stopped 26 Jul 2026. All
+      trading ends 26 Aug 2026, 01:00 UTC. Do not treat this as an ongoing
+      venue.
+    </div>
+  );
+}
+
+
 function Card({
   accent,
   title,
