@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Canonical venue list for RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-08 UTC.",
+          "Canonical venue list for RBNT: native spot, wrapped spot, and derivatives. Verified 2026-08-21 UTC.",
       },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Where to Buy & Trade RBNT" },
