@@ -115,6 +115,14 @@ const VENUES: Venue[] = [
     logo: "/logos/whitebit.png",
   },
   {
+    name: "BitMart",
+    type: "CEX",
+    pair: "RBNT/USDT",
+    url: "https://www.bitmart.com/trade/RBNT_USDT",
+    status: "winddown",
+    category: "native-spot",
+  },
+  {
     name: "BYDFi",
     type: "CEX",
     pair: "RBNT/USDT",
