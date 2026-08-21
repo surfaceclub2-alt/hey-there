@@ -1031,7 +1031,7 @@ function Page() {
 
       <footer className="mt-10 border-t border-hairline pt-6 pb-10">
         <p className="font-mono text-[13px]" style={{ color: "#ffb3ae" }}>
-          Last verified: 2026-08-11 UTC
+          Last verified: 2026-08-21 UTC
         </p>
         <p className="mt-2 text-[15px] text-secondary-foreground">
           Sources: CoinGecko, CoinCodex, Coinlore, and each exchange's own live
