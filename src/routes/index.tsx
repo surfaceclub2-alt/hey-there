@@ -246,6 +246,7 @@ const statusColor: Record<Venue["status"], string> = {
   verified: "bg-success",
   thin: "bg-warning",
   unconfirmed: "bg-warning",
+  winddown: "bg-warning",
   none: "bg-brand",
 };
 
@@ -253,6 +254,7 @@ const statusText: Record<Venue["status"], string> = {
   verified: "text-success",
   thin: "text-warning",
   unconfirmed: "text-warning",
+  winddown: "text-warning",
   none: "text-brand",
 };
 
@@ -260,7 +262,16 @@ const statusBorderColor: Record<Venue["status"], string> = {
   verified: "border-success",
   thin: "border-warning",
   unconfirmed: "border-warning",
+  winddown: "border-warning",
   none: "border-brand",
+};
+
+const statusLabel: Record<Venue["status"], string> = {
+  verified: "verified",
+  thin: "thin",
+  unconfirmed: "unconfirmed",
+  winddown: "wind-down",
+  none: "none",
 };
 
 function NativeStatusBadge({ status }: { status: Venue["status"] }) {
@@ -273,7 +284,7 @@ function NativeStatusBadge({ status }: { status: Venue["status"] }) {
         aria-hidden="true"
       />
       <span className={`font-mono text-[13px] ${statusText[status]}`}>
-        {status}
+        {statusLabel[status]}
       </span>
     </span>
   );
