@@ -175,7 +175,7 @@ function WrappedTag({ scale = 1 }: { scale?: number }) {
       style={{
         display: "inline-block",
         background: C.brand,
-        color: "#0f181d",
+        color: "#ffffff",
         fontFamily: SANS,
         fontWeight: 700,
         fontSize: 12 * scale,
