@@ -464,16 +464,17 @@ function GraphicPage() {
 
   const btn: React.CSSProperties = {
     fontFamily: SANS,
-    fontWeight: 700,
-    fontSize: 13,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    color: "#0f181d",
+    fontWeight: 600,
+    fontSize: 14,
+    letterSpacing: "0",
+    textTransform: "none",
+    color: "#ffffff",
     background: C.brand,
     border: "none",
     borderRadius: 4,
-    padding: "10px 16px",
+    padding: "10px 20px",
     cursor: "pointer",
+    transition: "opacity 150ms ease",
   };
 
   return (
@@ -506,6 +507,7 @@ function GraphicPage() {
         </div>
         <div>
           <button
+            className="transition-opacity hover:opacity-90"
             style={btn}
             onClick={() => exportPng(sq.current, 1080, 1080, "rbnt-venues-1080x1080.png")}
           >
@@ -521,6 +523,7 @@ function GraphicPage() {
         </div>
         <div>
           <button
+            className="transition-opacity hover:opacity-90"
             style={btn}
             onClick={() => exportPng(og.current, 1200, 630, "rbnt-venues-1200x630.png")}
           >
