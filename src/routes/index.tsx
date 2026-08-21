@@ -623,42 +623,6 @@ function WhitebitCallout() {
   );
 }
 
-function BitmartCallout() {
-  return (
-    <div
-      className="mt-2 flex items-start gap-3 text-[16px] leading-[1.5]"
-      style={{
-        backgroundColor: "#1e2a31",
-        border: "1px solid #FCD34D",
-        borderLeft: "3px solid #FCD34D",
-        borderRadius: "4px",
-        padding: "10px 14px",
-        color: "#e4ebf0",
-      }}
-    >
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#FCD34D"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="mt-1 shrink-0"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <line x1="12" y1="16" x2="12" y2="12" />
-        <line x1="12" y1="8" x2="12.01" y2="8" />
-      </svg>
-      BitMart is winding down. New orders and deposits stopped 26 Jul 2026. All
-      trading ends 26 Aug 2026, 01:00 UTC. Do not treat this as an ongoing
-      venue.
-    </div>
-  );
-}
-
 
 function Card({
   accent,
@@ -751,6 +715,35 @@ function Page() {
             Re-verify checklist
           </a>
         </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/public/Where_to_Buy_and_Trade_RBNT.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded px-5 py-2.5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#EF5350" }}
+          >
+            Read PDF
+          </a>
+          <a
+            href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/poundeater/task20/main/public/Where_to_Buy_and_Trade_RBNT.docx&embedded=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded px-5 py-2.5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#EF5350" }}
+          >
+            Read Docs
+          </a>
+          <a
+            href="https://dev.to/poundeater/where-to-buy-and-trade-rbnt-4jn5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded px-5 py-2.5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#EF5350" }}
+          >
+            Read Article
+          </a>
+        </div>
       </header>
 
       <div className="mt-8 flex flex-col gap-6">
@@ -767,11 +760,6 @@ function Page() {
               {v.name === "WhiteBIT" ? (
                 <li className="col-span-full list-none">
                   <WhitebitCallout />
-                </li>
-              ) : null}
-              {v.name === "BitMart" ? (
-                <li className="col-span-full list-none">
-                  <BitmartCallout />
                 </li>
               ) : null}
                 </Fragment>
@@ -951,7 +939,7 @@ function Page() {
           </p>
           <p className="mt-4 text-[16px] leading-relaxed text-secondary-foreground">
             CoinGecko's markets table splits into Spot, Perpetuals, and Futures
-            tabs - all five current results sit under Spot, with zero under the
+            tabs - all four current results sit under Spot, with zero under the
             other two. MEXC's own live futures order book for RBNT returns empty
             fields across the board. Some exchange pages carry generic marketing
             copy mentioning futures trading, but that copy is templated and
@@ -987,7 +975,7 @@ function Page() {
           </h2>
           <p className="mt-3 text-[16px] leading-relaxed text-secondary-foreground">
             Every venue was checked directly against its own trade or listing
-            page on August 8, 2026, then cross-referenced against at least two
+            page on 2026-08-21, then cross-referenced against at least two
             independent sources. Nothing here is copied from a single aggregator
             without a second check.
           </p>
