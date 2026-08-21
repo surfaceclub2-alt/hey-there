@@ -464,16 +464,17 @@ function GraphicPage() {
 
   const btn: React.CSSProperties = {
     fontFamily: SANS,
-    fontWeight: 700,
-    fontSize: 13,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    color: "#0f181d",
+    fontWeight: 600,
+    fontSize: 14,
+    letterSpacing: "0",
+    textTransform: "none",
+    color: "#ffffff",
     background: C.brand,
     border: "none",
     borderRadius: 4,
-    padding: "10px 16px",
+    padding: "10px 20px",
     cursor: "pointer",
+    transition: "opacity 150ms ease",
   };
 
   return (
