@@ -115,14 +115,6 @@ const VENUES: Venue[] = [
     logo: "/logos/whitebit.png",
   },
   {
-    name: "BitMart",
-    type: "CEX",
-    pair: "RBNT/USDT",
-    url: "https://www.bitmart.com/trade/RBNT_USDT",
-    status: "winddown",
-    category: "native-spot",
-  },
-  {
     name: "BYDFi",
     type: "CEX",
     pair: "RBNT/USDT",
@@ -246,7 +238,6 @@ const statusColor: Record<Venue["status"], string> = {
   verified: "bg-success",
   thin: "bg-warning",
   unconfirmed: "bg-warning",
-  winddown: "bg-warning",
   none: "bg-brand",
 };
 
@@ -254,7 +245,6 @@ const statusText: Record<Venue["status"], string> = {
   verified: "text-success",
   thin: "text-warning",
   unconfirmed: "text-warning",
-  winddown: "text-warning",
   none: "text-brand",
 };
 
@@ -262,7 +252,6 @@ const statusBorderColor: Record<Venue["status"], string> = {
   verified: "border-success",
   thin: "border-warning",
   unconfirmed: "border-warning",
-  winddown: "border-warning",
   none: "border-brand",
 };
 
@@ -270,7 +259,6 @@ const statusLabel: Record<Venue["status"], string> = {
   verified: "verified",
   thin: "thin",
   unconfirmed: "unconfirmed",
-  winddown: "wind-down",
   none: "none",
 };
 
@@ -514,17 +502,6 @@ function PriceCell({
     fontFamily: MONO_STACK,
     fontSize: 14,
   } as const;
-
-  if (venue.name === "BitMart") {
-    return (
-      <span
-        className="justify-self-end overflow-visible whitespace-nowrap text-right"
-        style={{ ...baseStyle, color: "#93a4ae" }}
-      >
-        Winding down
-      </span>
-    );
-  }
 
   if (venue.name === "BYDFi") {
     return (
