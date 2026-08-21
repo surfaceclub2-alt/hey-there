@@ -507,6 +507,7 @@ function GraphicPage() {
         </div>
         <div>
           <button
+            className="transition-opacity hover:opacity-90"
             style={btn}
             onClick={() => exportPng(sq.current, 1080, 1080, "rbnt-venues-1080x1080.png")}
           >
@@ -522,6 +523,7 @@ function GraphicPage() {
         </div>
         <div>
           <button
+            className="transition-opacity hover:opacity-90"
             style={btn}
             onClick={() => exportPng(og.current, 1200, 630, "rbnt-venues-1200x630.png")}
           >
