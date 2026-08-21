@@ -232,6 +232,7 @@ const METHODOLOGY = [
   "For wRBNT, contract addresses were matched against CoinMarketCap's explorer links.",
   "Any venue found in only one source with no live confirmation is left off the list.",
   "Relying on a single aggregator's market table alone would have understated listings by two venues.",
+  "BitMart was checked directly after being flagged on CoinCodex. RBNT is no longer listed there as of 21 August 2026, so it is not included.",
 ];
 
 const statusColor: Record<Venue["status"], string> = {
