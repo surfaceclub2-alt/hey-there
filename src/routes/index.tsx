@@ -1097,6 +1097,49 @@ function Page() {
             </svg>
             <span>DEV.TO</span>
           </a>
+          <a
+            href="/RBNT_venues_1080x1080_X.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="9" cy="9" r="1.5" />
+              <path d="M21 16l-5-5-6 6-3-3-4 4" />
+            </svg>
+            <span>GRAPHIC (X)</span>
+          </a>
+          <a
+            href="/RBNT_venues_1200x630_Discord.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <circle cx="8" cy="10" r="1.5" />
+              <path d="M22 17l-6-6-5 5-2-2-5 5" />
+            </svg>
+            <span>GRAPHIC (DISCORD)</span>
+          </a>
+          <a
+            href="/Spot_vs_Futures_Companion.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-doc-link inline-flex items-center no-underline"
+            style={{ gap: "6px", fontFamily: "JetBrains Mono, monospace", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+              <path d="M15 2v5h5" />
+              <line x1="8" y1="13" x2="16" y2="13" />
+              <line x1="8" y1="17" x2="13" y2="17" />
+            </svg>
+            <span>COMPANION</span>
+          </a>
         </div>
         <div className="flex justify-center" style={{ marginTop: "24px" }}>
           <a
