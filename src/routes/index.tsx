@@ -1007,7 +1007,7 @@ function Page() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center" style={{ gap: "32px" }}>
           <a
-            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/public/Where_to_Buy_and_Trade_RBNT.pdf"
+            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/latest/Where_to_Buy_and_Trade_RBNT.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-doc-link inline-flex items-center no-underline"
@@ -1021,7 +1021,7 @@ function Page() {
             <span>PDF</span>
           </a>
           <a
-            href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/poundeater/task20/main/public/Where_to_Buy_and_Trade_RBNT.docx&embedded=true"
+            href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/poundeater/task20/main/latest/Where_to_Buy_and_Trade_RBNT.docx&embedded=true"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-doc-link inline-flex items-center no-underline"
@@ -1063,7 +1063,7 @@ function Page() {
             <span>DEV.TO</span>
           </a>
           <a
-            href="/RBNT_venues_1080x1080_X.png"
+            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/latest/RBNT_venues_1080x1080_X.png"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-doc-link inline-flex items-center no-underline"
@@ -1077,7 +1077,7 @@ function Page() {
             <span>GRAPHIC (X)</span>
           </a>
           <a
-            href="/RBNT_venues_1200x630_Discord.png"
+            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/latest/RBNT_venues_1200x630_Discord.png"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-doc-link inline-flex items-center no-underline"
@@ -1091,7 +1091,7 @@ function Page() {
             <span>GRAPHIC (DISCORD)</span>
           </a>
           <a
-            href="/Spot_vs_Futures_Companion.pdf"
+            href="https://cdn.jsdelivr.net/gh/poundeater/task20@main/latest/Spot_vs_Futures_Companion.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-doc-link inline-flex items-center no-underline"
