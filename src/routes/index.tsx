@@ -636,7 +636,7 @@ function Card({
   accent?: string;
   title: string;
   caption?: string | ReactNode;
-  captionTone?: "muted" | "warning";
+  captionTone?: "muted" | "warning" | "brand";
   nested?: boolean;
   children: ReactNode;
 }) {
